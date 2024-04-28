@@ -53,7 +53,7 @@
             </div>
             @can('admin')
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/cart"><i class="bi bi-menu-button-wide"></i> Dashboard</a>
+            <a class="dropdown-item" href="/dashboard"><i class="bi bi-menu-button-wide"></i> Dashboard</a>
                 <div class="dropdown-divider"></div>
             @endcan
             <a class="dropdown-item" href="/cart"><i class="bi bi-cart"></i> Cart <span class="badge badge-primary">

@@ -14,6 +14,10 @@ class HomeController extends Controller
     public function contact(){
         return view('contact', ['active' => 'contact' ]);
     }
+    public function dashboard(){
+        $products = Product::all();
+        return view('dashboard', ['active' => 'dashboard','products' => $products ]);
+    }
     public function index(){
         $products = Product::all();
         $categories = Category::all();

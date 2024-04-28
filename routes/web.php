@@ -16,6 +16,7 @@ use App\Http\Controllers\CartController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard')->middleware('auth');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/help', [HomeController::class, 'contact'])->name('contact');
 Route::get('/login', [HomeController::class, 'login'])->name('login')->middleware('guest');
@@ -33,7 +34,3 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/updateCart', [CartController::class, 'updateCart'])->name('cart.updateCart');
 Route::post('/addToCart', [CartController::class, 'addToCart'])->name('cart.addToCart');
 //
-Route::get('/checkout', [CartController::class, 'tahap1'])->name('cart.checkout');
-Route::get('/tahap1', [CartController::class, 'tahap1'])->name('cart.tahap1');
-Route::get('/tahap2', [CartController::class, 'tahap2'])->name('cart.tahap2');
-Route::get('/tahap3', [CartController::class, 'tahap3'])->name('cart.tahap3');

@@ -17,5 +17,10 @@
     <!-- icon -->
     <link rel="icon" href="/assets/logo/logo.png" type="icon/png">
     <title>Merah Putih Marketplace</title>
+    <style>
+      .container-fluid{
+        min-height:600px;
+      }
+    </style>
   </head>  
   <body>

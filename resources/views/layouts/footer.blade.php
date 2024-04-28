@@ -1,4 +1,15 @@
- <!-- Optional JavaScript; choose one of the two! -->
+<footer class="bg-light"  style="box-shadow: 0 4px 13px 3px black;">
+<div class="content-footer p-3 d-flex">
+  <img src="/assets/logo/logo.png" alt="" width="70" class="mx-5">
+      <ul class="d-flex mx-2 px-2 py-2 my-2" style="gap:1rem;list-style:none;font-size:1.8rem">
+        <li><a href=""><i class="bi bi-facebook"></i></a></li>
+        <li><a href=""><i class="bi bi-whatsapp"></i></a></li>
+        <li><a href=""><i class="bi bi-twitter-x"></i></a></li>
+        <li><a href=""><i class="bi bi-instagram"></i></a></li>
+      </ul>
+</div>
+</footer>
+<!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
