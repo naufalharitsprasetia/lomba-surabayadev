@@ -51,6 +51,11 @@
                     <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-in-left"></i> Logout</a>
                 </form>
             </div>
+            @can('admin')
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/cart"><i class="bi bi-menu-button-wide"></i> Dashboard</a>
+                <div class="dropdown-divider"></div>
+            @endcan
             <a class="dropdown-item" href="/cart"><i class="bi bi-cart"></i> Cart <span class="badge badge-primary">
             @if(count(auth()->user()->carts) == 0)  
             0

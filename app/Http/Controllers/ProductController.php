@@ -20,6 +20,11 @@ class ProductController extends Controller
         $categories = Category::all();
         return view('products', ['active' => 'products' , 'products' => $products, 'categories' => $categories]);
     }
+    public function indexByCategory($id)
+    {
+        $products = Product::where('product_category_id', $id)->get();
+        return view('products', ['active' => 'products' , 'products' => $products]);
+    }
     
     public function show(Product $product)
     {

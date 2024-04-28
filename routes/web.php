@@ -26,11 +26,14 @@ Route::post('/register', [HomeController::class, 'addUser'])->name('addUser')->m
 Route::post('/logout', [HomeController::class, 'logout'])->name('logout')->middleware('auth');
 // Products
 Route::get('/products', [ProductController::class, 'index'])->name('product.index');
+Route::get('/products/c/{id}', [ProductController::class, 'indexByCategory'])->name('product.indexByCategory');
 Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
 // Cart
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::get('/updateCart', [CartController::class, 'updateCart'])->name('cart.updateCart');
 Route::post('/addToCart', [CartController::class, 'addToCart'])->name('cart.addToCart');
 //
+Route::get('/checkout', [CartController::class, 'tahap1'])->name('cart.checkout');
 Route::get('/tahap1', [CartController::class, 'tahap1'])->name('cart.tahap1');
 Route::get('/tahap2', [CartController::class, 'tahap2'])->name('cart.tahap2');
 Route::get('/tahap3', [CartController::class, 'tahap3'])->name('cart.tahap3');

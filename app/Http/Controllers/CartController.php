@@ -14,7 +14,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        $carts = Cart::all();
+        $user_id = auth()->user()->id;
+        $carts = Cart::where('cart_user_id',$user_id)->get();
         return view('cart', ['active'=>'cart', 'carts'=> $carts]);
     }
     public function create()
@@ -29,7 +30,7 @@ class CartController extends Controller
         $validatedData['cart_user_id'] = auth()->user()->id;
         $validatedData['cart_quantity'] = 1;
         Cart::create($validatedData);
-        return redirect('/products')->with('success', 'Produk Berhasil ditambahkan !');
+        return redirect('/cart')->with('success', 'Produk Berhasil ditambahkan !');
     }
     public function show(Cart $cart)
     {
@@ -37,16 +38,27 @@ class CartController extends Controller
     public function edit(Cart $cart)
     {
     }
-    public function update(Request $request, Cart $cart)
+    public function updateCart()
     {   
+        $cart = Cart::find($_GET['id']);
+        $cart->cart_quantity += $_GET['perubahan'];
+        $cart->save();
+        return redirect('/cart');
     }
     public function destroy(Cart $cart)
     {
     }
     public function tahap1(){
-        $dataJson = static::getProvinsi();
-        $data = json_decode($dataJson);
-        return view('tahap1', ['active'=> 'cart', 'data'=> $data]);  
+        //    CHECKOUT
+        $nama = auth()->user()->name;
+        $email = auth()->user()->email;
+        $user_id = auth()->user()->id;
+        $carts = Cart::where('cart_user_id',$user_id)->get();
+        return view('/cart');
+        // $dataJson = static::getProvinsi();
+        // $data = json_decode($dataJson);
+        // // dd($data);
+        // return view('tahap1', ['active'=> 'cart', 'data'=> $data]);  
     }
     public function getProvinsi(){
         $curl = curl_init();

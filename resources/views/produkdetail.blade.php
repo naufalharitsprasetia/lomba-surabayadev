@@ -26,11 +26,10 @@ $fmt->setAttribute(\NumberFormatter::MIN_FRACTION_DIGITS, 0);
                     
             </div>
         </div>
-        <div class="desc mx-3">
+        <div class="desc mx-3 w-50">
             <h4>{{$product->product_name}}</h4>
             <h2>{{$fmt->formatCurrency($product->product_price, "Rp.")}}</h2>
-            <p>Deskripsi :</p>
-            <br>
+            <p>Deskripsi : </p>
             <p>{{$product->product_desc}}</p>
         </div>
     </div>    

@@ -18,9 +18,9 @@ $fmt->setAttribute(\NumberFormatter::MIN_FRACTION_DIGITS, 0);
     }
 </style>
 <div class="container-fluid p-4 mt-3">
-    @if(session()->flash('success'))
+    @if(session()->has('success'))
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        {{ flash('success')->messages  }}
+        {{ session('success')  }}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
@@ -41,10 +41,10 @@ $fmt->setAttribute(\NumberFormatter::MIN_FRACTION_DIGITS, 0);
     <!-- HERO END -->
     <!-- category start -->
     <div class="cateogry-container">
-        <h2>Categories : </h2>
+        <h2 class="text-center mb-3" style="text-shadow:1px 1px black;">Categories </h2>
         <div class="row" style="gap:1rem">
         @foreach($categories as $category)
-        <a href="#" class="card text-dark" style="width: 12rem;">
+        <a href="/products/c/{{$category->id}}" class="card text-dark" style="width: 12rem;">
             <img src="/assets/category/{{$category->category_icon}}" class="card-img-top" alt="...">
             <div class="card-body text-center">
                 <h5 class="card-title ">{{$category->category_name}}</h5>
@@ -57,10 +57,10 @@ $fmt->setAttribute(\NumberFormatter::MIN_FRACTION_DIGITS, 0);
     <!-- category END -->
     <!-- produk start -->
     <div class="products-container">
-        <h2 id="products">All Products : </h2>
+        <h2 class="text-center mb-3" style="text-shadow:1px 1px black;" id="products">All Products </h2>
         <div class="row" style="gap:1rem">
             @foreach($products as $product)
-            <a href="#" class="card text-dark" style="width: 16rem;">
+            <a href="" class="card text-dark" style="width: 16rem;">
                 <img src="/assets/products/{{$product->product_img}}" class="card-img-top" alt="...">
                 <div class="card-body ">
                     <h6 class="card-subtitle mb-2 text-muted">{{$fmt->formatCurrency($product->product_price, "Rp.")}}</h6>

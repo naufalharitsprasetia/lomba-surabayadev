@@ -69,7 +69,7 @@ class DatabaseSeeder extends Seeder
         // Product
         Product::create([
             'product_name' => 'Apple iPhone 14 Pro max 5G 1TB 512G',
-            'product_category_id' => 1, // foreign
+            'product_category_id' => 5, // foreign
             'product_img' => 'ip14.png',
             'product_slug' => '',
             'product_desc' => 'Apple iPhone 14 Pro Max menawarkan perpaduan dapur pacu dan layar terbaik. Prosesor Apple A16 Bionic dan iOS 16 disandingkan dengan layar Super Retina XDR OLED 6,7 inci yang gesit untuk multitasking. Untuk mendukung performa Apple menyematkan 6GB RAM serta ROM 128GB, 256GB, 512GB, dan 1TB. Semakin lengkap dengan quad kamera beresolusi 48 MP serta kamera selfie 12 MP dengan sensor biometrik.',
@@ -85,6 +85,26 @@ class DatabaseSeeder extends Seeder
             'product_desc' => '',
             'product_price' => '100000',
             'product_stock' => '98',
+            'product_brand' => 'REXUS',
+        ]);
+        Product::create([
+            'product_name' => 'MacBook Pro M2 (2022)',
+            'product_category_id' => 2, // foreign
+            'product_img' => 'macbook.png',
+            'product_slug' => '',
+            'product_desc' => 'MacBook Pro 13 inci lebih andal dari sebelumnya. Bertenaga super berkat chip M2 generasi berikutnya, MacBook Pro ini merupakan laptop pro Apple yang paling portabel, dengan kekuatan baterai hingga 20 jam (2)',
+            'product_price' => '17000000',
+            'product_stock' => '66',
+            'product_brand' => 'APPLE',
+        ]);
+        Product::create([
+            'product_name' => 'Keyboard REXUS RGB Mechanical-Keyboard',
+            'product_category_id' => 4, // foreign
+            'product_img' => 'keyboard.png',
+            'product_slug' => '',
+            'product_desc' => 'MacBook Pro 13 inci lebih andal dari sebelumnya. Bertenaga super berkat chip M2 generasi berikutnya, MacBook Pro ini merupakan laptop pro Apple yang paling portabel, dengan kekuatan baterai hingga 20 jam (2)',
+            'product_price' => '270000',
+            'product_stock' => '16',
             'product_brand' => 'REXUS',
         ]);
         Product::create([
