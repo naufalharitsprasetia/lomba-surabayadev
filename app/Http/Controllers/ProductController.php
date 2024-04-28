@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -14,7 +16,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        $categories = Category::all();
+        return view('products', ['active' => 'products' , 'products' => $products, 'categories' => $categories]);
     }
 
     /**

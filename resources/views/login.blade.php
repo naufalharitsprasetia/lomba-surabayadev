@@ -14,7 +14,8 @@
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" name="password" id="exampleInputPassword1">
         </div>
-        
+        <small class="form-text">Anda Belum Punya Akun ? <a href="/register" class="text-primary"> Daftar Sekarang !</a> </small>      
+       
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

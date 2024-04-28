@@ -4,11 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use App\Models\Category;
+use App\Models\Product;
+
 class HomeController extends Controller
 {
     // 
+    public function contact(){
+        return view('contact', ['active' => 'contact' ]);
+    }
     public function index(){
-        return view('index', ['active' => 'home']);
+        $products = Product::all();
+        $categories = Category::all();
+        return view('index', ['active' => 'home' , 'products' => $products, 'categories' => $categories]);
     }
     public function login(){
         return view('login' ,['active' => 'login']);
@@ -25,6 +34,9 @@ class HomeController extends Controller
                 'picture' => 'nullable',
                 ]
         ); 
+        $validatedData['password'] = bcrypt($validatedData['password']);
+        User::create($validatedData);
+        return redirect('/login')->with('success', "berhasil membuat akun baru!");
         // return view('');
     }
     public function authenticate(Request $request)
@@ -44,4 +56,14 @@ class HomeController extends Controller
             'loginError' => 'Login Failled !',
         ])->onlyInput('email');
     }
+    public function logout(Request $request)
+    {
+    Auth::logout();
+ 
+    $request->session()->invalidate();
+ 
+    $request->session()->regenerateToken();
+ 
+    return redirect('/login');
+    }   
 }

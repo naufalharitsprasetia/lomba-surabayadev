@@ -17,10 +17,10 @@
         <li class="nav-item {{ $active == 'home' ? 'active' :  ''}}">
             <a class="nav-link" href="/"><i class="bi bi-house"></i> Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item {{ $active == 'products' ? 'active' :  ''}}">
             <a class="nav-link" href="/products"><i class="bi bi-laptop"></i> Products</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item {{ $active == 'contact' ? 'active' :  ''}}">
             <a class="nav-link" href="/contact"><i class="bi bi-person-lines-fill"></i> Contact Us</a>
         </li>
         <form class="form-inline my-2 my-lg-0">
@@ -33,8 +33,18 @@
             <i class="bi bi-person-circle"></i> Akun 
             </a>
             <div class="dropdown-menu dropdown-menu-left" style="min-width:8rem;">
+            @guest
             <a class="dropdown-item" href="/register"><i class="bi bi-plus-circle"></i> Register</a>
             <a class="dropdown-item" href="/login"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+            @endguest
+            @auth
+            <div class="dropdown-item">
+                <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-in-left"></i> Logout</a>
+                </form>
+            </div>
+            @endauth
             <a class="dropdown-item" href="/cart"><i class="bi bi-cart"></i> Cart</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/help"><i class="bi bi-question-circle"></i> Help</a>

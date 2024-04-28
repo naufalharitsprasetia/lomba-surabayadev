@@ -70,6 +70,7 @@ class DatabaseSeeder extends Seeder
         Product::create([
             'product_name' => 'Iphone 15 Pro Max Ultra 2GB',
             'product_category_id' => 1, // foreign
+            'product_img' => 'ip14.png',
             'product_slug' => 'handphone berkualitas',
             'product_desc' => '',
             'product_price' => '17000000',
@@ -79,6 +80,7 @@ class DatabaseSeeder extends Seeder
         Product::create([
             'product_name' => 'Mouse Rexus White RGB Wireless',
             'product_category_id' => 1, // foreign
+            'product_img' => 'mouse.png',
             'product_slug' => 'Buatlah hidup anda menjadi bahagia',
             'product_desc' => '',
             'product_price' => '100000',
@@ -88,6 +90,7 @@ class DatabaseSeeder extends Seeder
         Product::create([
             'product_name' => 'laptop asus vivobook v415_A152',
             'product_category_id' => 2, // foreign
+            'product_img' => 'macbook.png',
             'product_slug' => 'laptop murah dengan spek terjangkau',
             'product_desc' => 'Laptop Terbagus',
             'product_price' => '7000000',
