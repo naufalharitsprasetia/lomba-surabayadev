@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,7 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/help', [HomeController::class, 'contact'])->name('contact');
 Route::get('/login', [HomeController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [HomeController::class, 'authenticate'])->name('authenticate')->middleware('guest');
 Route::get('/register', [HomeController::class, 'register'])->name('register')->middleware('guest');
@@ -24,3 +26,11 @@ Route::post('/register', [HomeController::class, 'addUser'])->name('addUser')->m
 Route::post('/logout', [HomeController::class, 'logout'])->name('logout')->middleware('auth');
 // Products
 Route::get('/products', [ProductController::class, 'index'])->name('product.index');
+Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
+// Cart
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/addToCart', [CartController::class, 'addToCart'])->name('cart.addToCart');
+//
+Route::get('/tahap1', [CartController::class, 'tahap1'])->name('cart.tahap1');
+Route::get('/tahap2', [CartController::class, 'tahap2'])->name('cart.tahap2');
+Route::get('/tahap3', [CartController::class, 'tahap3'])->name('cart.tahap3');

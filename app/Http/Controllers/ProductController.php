@@ -20,7 +20,13 @@ class ProductController extends Controller
         $categories = Category::all();
         return view('products', ['active' => 'products' , 'products' => $products, 'categories' => $categories]);
     }
-
+    
+    public function show(Product $product)
+    {
+        // dd($product);
+        return view('produkdetail', ['active' => 'products' , 'product' => $product]);
+        //
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -48,10 +54,6 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.

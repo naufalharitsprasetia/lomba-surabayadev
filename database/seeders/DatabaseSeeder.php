@@ -68,12 +68,12 @@ class DatabaseSeeder extends Seeder
         
         // Product
         Product::create([
-            'product_name' => 'Iphone 15 Pro Max Ultra 2GB',
+            'product_name' => 'Apple iPhone 14 Pro max 5G 1TB 512G',
             'product_category_id' => 1, // foreign
             'product_img' => 'ip14.png',
-            'product_slug' => 'handphone berkualitas',
-            'product_desc' => '',
-            'product_price' => '17000000',
+            'product_slug' => '',
+            'product_desc' => 'Apple iPhone 14 Pro Max menawarkan perpaduan dapur pacu dan layar terbaik. Prosesor Apple A16 Bionic dan iOS 16 disandingkan dengan layar Super Retina XDR OLED 6,7 inci yang gesit untuk multitasking. Untuk mendukung performa Apple menyematkan 6GB RAM serta ROM 128GB, 256GB, 512GB, dan 1TB. Semakin lengkap dengan quad kamera beresolusi 48 MP serta kamera selfie 12 MP dengan sensor biometrik.',
+            'product_price' => '20500000',
             'product_stock' => '12',
             'product_brand' => 'APPLE',
         ]);
@@ -81,21 +81,21 @@ class DatabaseSeeder extends Seeder
             'product_name' => 'Mouse Rexus White RGB Wireless',
             'product_category_id' => 1, // foreign
             'product_img' => 'mouse.png',
-            'product_slug' => 'Buatlah hidup anda menjadi bahagia',
+            'product_slug' => '',
             'product_desc' => '',
             'product_price' => '100000',
             'product_stock' => '98',
             'product_brand' => 'REXUS',
         ]);
         Product::create([
-            'product_name' => 'laptop asus vivobook v415_A152',
+            'product_name' => 'MacBook Pro M2 (2022)',
             'product_category_id' => 2, // foreign
             'product_img' => 'macbook.png',
-            'product_slug' => 'laptop murah dengan spek terjangkau',
-            'product_desc' => 'Laptop Terbagus',
-            'product_price' => '7000000',
+            'product_slug' => '',
+            'product_desc' => 'MacBook Pro 13 inci lebih andal dari sebelumnya. Bertenaga super berkat chip M2 generasi berikutnya, MacBook Pro ini merupakan laptop pro Apple yang paling portabel, dengan kekuatan baterai hingga 20 jam (2)',
+            'product_price' => '17000000',
             'product_stock' => '66',
-            'product_brand' => 'ASUS',
+            'product_brand' => 'APPLE',
         ]);
     }
 }

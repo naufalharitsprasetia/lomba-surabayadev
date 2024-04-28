@@ -1,6 +1,12 @@
 @extends('layouts.main')
 
 @section('content')
+<?php
+$fmt = new NumberFormatter( 'id_ID', NumberFormatter::CURRENCY, );
+$fmt->setAttribute(\NumberFormatter::MIN_FRACTION_DIGITS, 0);
+// echo $fmt->formatCurrency(, "Rp.")."\n";
+
+?>
 <style>
     .card {
         transition:1s;
@@ -57,7 +63,7 @@
             <a href="#" class="card text-dark" style="width: 16rem;">
                 <img src="/assets/products/{{$product->product_img}}" class="card-img-top" alt="...">
                 <div class="card-body ">
-                    <h6 class="card-subtitle mb-2 text-muted">Rp. {{$product->product_price}},-</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{$fmt->formatCurrency($product->product_price, "Rp.")}}</h6>
                     <h5 class="card-title ">{{$product->product_name}}</h5>
                 </div>
             </a>

@@ -29,9 +29,16 @@
         </form>
         </ul>
         <div class="nav-item dropdown pr-4">
+            @guest
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-person-circle"></i> Akun 
+                <i class="bi bi-person-circle"></i> Akun 
             </a>
+            @endguest
+            @auth
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-person-circle"></i> Welcome Back, {{auth()->user()->name}} 
+            </a>
+            @endauth
             <div class="dropdown-menu dropdown-menu-left" style="min-width:8rem;">
             @guest
             <a class="dropdown-item" href="/register"><i class="bi bi-plus-circle"></i> Register</a>
@@ -44,8 +51,14 @@
                     <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-in-left"></i> Logout</a>
                 </form>
             </div>
+            <a class="dropdown-item" href="/cart"><i class="bi bi-cart"></i> Cart <span class="badge badge-primary">
+            @if(count(auth()->user()->carts) == 0)  
+            0
+            @else
+            {{count(auth()->user()->carts)}}
+            @endif
+            </span></a>
             @endauth
-            <a class="dropdown-item" href="/cart"><i class="bi bi-cart"></i> Cart</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/help"><i class="bi bi-question-circle"></i> Help</a>
             </div>
